@@ -1,4 +1,4 @@
-package main
+package agentcore
 
 import (
 	"fmt"
@@ -73,9 +73,7 @@ func NewLogRewriteTool(logPath string) (tool.Tool, error) {
 // --- Tool 2: check_already_polished ---
 //
 // A second example so the pattern is clear: a lightweight heuristic tool
-// that lets the agent skip rewriting when the input already reads as
-// professional. This is a good "second tool" to add because it changes
-// agent behavior (via your Instruction) rather than just logging.
+// that lets the agent skip rewriting when the input already reads as professional.
 
 type checkPolishArgs struct {
 	Message string `json:"message" jsonschema:"The message to check for existing professionalism."`
